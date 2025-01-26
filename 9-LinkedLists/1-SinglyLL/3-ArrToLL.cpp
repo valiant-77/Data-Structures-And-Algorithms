@@ -6,16 +6,6 @@ class Node {
     public:
     int data;
     Node* next;
-
-    
-    // Constructor to initialize a new node
-    public:
-    Node(int d,Node* n,Node* p)
-    {
-        data=d;
-        next=n;
-      
-    }
     
     public:
     Node(int d){
