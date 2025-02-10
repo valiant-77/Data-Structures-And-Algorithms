@@ -1,3 +1,15 @@
+/* Logic:
+1-get digit count
+2-extract every digit by doing n=n%10
+3-for every digit do sum=sum+pow(digit raised to count)
+4-if sum = orignal number then its armstrong
+
+TC=O(log10(n))
+SC=O(1)
+*/
+
+
+
 #include<bits/stdc++.h>
 using namespace std;
 

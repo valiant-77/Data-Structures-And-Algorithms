@@ -1,3 +1,15 @@
+/* Logic:
+1-extract every digit by doing n=n%10
+2-rev=rev*10+digit
+3-remove last digit
+4-check if reverse == original
+
+TC=O(log10(n))
+SC=O(1)
+*/
+
+
+
 #include<bits/stdc++.h>
 using namespace std;
 

@@ -1,3 +1,11 @@
+/* Logic:
+1-extract every digit by doing n=n%10
+2-check if n is divisble by digit(n%digit==0)
+3-if n is divisble with every digit then return yes
+
+TC=O(log10(n))
+SC=O(1)
+*/
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -13,12 +21,12 @@ int divis(int n)
         
         x=x/10;
         
-       /* if(digit==0)
+        if(digit==0)
         {
             continue;
             
 
-        }*/
+        }
     
         if(n%digit==0)
         {
