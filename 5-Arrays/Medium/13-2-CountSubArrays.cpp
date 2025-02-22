@@ -4,23 +4,24 @@
 using namespace std;
 
 int subarraySum(vector<int>& nums, int k) {
-    unordered_map<int, int> presumMap; // Stores the prefix sum and its frequency
-    int presum = 0; // The cumulative sum
+    unordered_map<int, int> mp; // Stores the prefix sum and its frequency
+    int sum = 0; // The cumulative sum
     int count = 0; // Count of subarrays that sum to k
 
     // Initialize the presumMap with 0 to handle subarrays that start from index 0
-    presumMap[0] = 1;
+    mp[0] = 1;
 
     for (int i = 0; i < nums.size(); i++) {
-        presum += nums[i];
+        sum=sum+nums[i];
 
+        int presum=sum-k;
         // If (presum - k) exists in the map, it means there is a subarray that sums to k
-        if (presumMap.find(presum - k) != presumMap.end()) {
-            count += presumMap[presum - k];
+        if (mp.find(presum) != mp.end()) {
+            count=count+mp[presum];
         }
 
         // Update the map with the current prefix sum
-        presumMap[presum]++;
+        mp[sum]++;
     }
 
     return count;
