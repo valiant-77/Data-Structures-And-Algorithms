@@ -2,6 +2,19 @@
 using namespace std;
 
 
+int product(int mid,int n)
+{
+  long long prod=1;
+  
+  for(int j=1;j<=n;j++)
+  {
+    prod=prod*mid;
+  }
+  
+  return prod;
+}
+
+
 int NthRoot(int n,int m)
 {
   int low=1;
@@ -10,13 +23,8 @@ int NthRoot(int n,int m)
   while(low<=high)
   {
     int mid=(low+high)/2;
-    long long x=1;
-    for(int i=1;i<=n;i++)
-    {
-      x=x*mid;
-      if(x>m) break;
-      
-    }
+
+   int x= product(mid,n);
     
     if(x==m)
     {
