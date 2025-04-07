@@ -1,13 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int power(int k,int l)
+int power(int i,int n)
 {
   long long prod=1;
   
-  for(int j=1;j<=l;j++)
+  for(int j=1;j<=n;j++)
   {
-    prod=prod*k;
+    prod=prod*i;
   }
   
   return prod;
