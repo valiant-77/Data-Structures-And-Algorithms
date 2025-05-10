@@ -7,17 +7,17 @@ using namespace std;
 
 int duplicates(int arr[],int n){
 
-    int j=1;
-    for(int i=1;i<n;i++)
+    int j=0;
+    for(int i=1;i<=n;i++)
     {
-        if(arr[i]!=arr[i-1])
+        if(arr[i]!=arr[j])
         {
-            arr[j]=arr[i];
+            arr[j+1]=arr[i];
             j++;
         }
     }
 
-    return j;
+    return j+1;
 }
 
 int main(){
