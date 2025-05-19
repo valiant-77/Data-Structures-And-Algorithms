@@ -3,11 +3,13 @@ using namespace std;
 
 int longestSuccessiveElements(vector<int>& a) {
     if (a.empty()) return 0;
-    
+    int n=a.size();
     unordered_set<int> s(a.begin(), a.end());
     int longest = 0;
     
-    for (int num : a) {
+    for (int i=0;i<n;i++)
+    {
+        int num=a[i];
         if (s.find(num - 1) == s.end()) { // Check if it's the start of a sequence
             int current_num = num;
             int current_length = 1;
