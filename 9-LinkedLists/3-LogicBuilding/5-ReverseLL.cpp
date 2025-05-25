@@ -17,16 +17,16 @@ struct ListNode {
     //Function to add two numbers as linked list
     ListNode* reverseList(ListNode* head) {
 
-        ListNode* temp=head;
+        ListNode* curr=head;
         
         ListNode* prev=nullptr;
 
-        while(temp!=nullptr)
+        while(curr!=nullptr)
         {
-            ListNode* front=temp->next;
-            temp->next=prev;
-            prev=temp;
-            temp=front;
+            ListNode* front=curr->next;
+            curr->next=prev;
+            prev=curr;
+            curr=front;
             
         }
 
