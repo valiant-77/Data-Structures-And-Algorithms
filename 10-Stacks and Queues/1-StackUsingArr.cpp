@@ -31,19 +31,22 @@ public:
         if (isFull()) {
             cout << "Stack Overflow! Cannot push: " << value << endl;
         } else {
-            arr[++top] = value;
+            top++; 
+             arr[top]=value;
         }
     }
 
     // Pop an element from the stack
     int pop() {
-        if (isEmpty()) {
-            cout << "Stack Underflow! Cannot pop." << endl;
-            return -1;
-        } else {
-            return arr[top--];
-        }
+    if (isEmpty()) {
+        cout << "Stack Underflow! Cannot pop." << endl;
+        return -1;
+    } else {
+        int x = arr[top];
+        top--;
+        return x;  // Now it's fine
     }
+}
 
     // Peek the top element of the stack
     int peek() {
