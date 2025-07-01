@@ -83,12 +83,6 @@ Node* insertAtKthPosition(Node* head,int v,int place)
         count++;
     }
     
-    if(place==count)
-    {
-         prev->next=newNode;
-         newNode->next=nullptr;
-    
-    }
     
     return head;
 }
