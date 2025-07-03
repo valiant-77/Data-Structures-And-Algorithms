@@ -65,32 +65,24 @@ Node* deletion(Node* head,int k)
     }
     
     Node* current=head;
-    Node* last=nullptr;
+   
     int count=1;
     
-    while(current->next!=nullptr)
+    while(current!=nullptr)
     {
         
         if(count==k)
         {
-            last->next=current->next;
-            current->next->prev=last;
-            delete current;
-           return head;
+           Node*last=current->prev;
+           last->next=current->next;
+           delete current;
+           break;
         }
         
-        last=current;
+    
         current=current->next;
         count++;
     }
-    
-    if (count==k)
-    {
-        last->next=nullptr;
-        delete current;
-    }
-    
-
    
   
     return head;
@@ -104,7 +96,7 @@ int main() {
     // Convert array to linked list
     Node* head = arrayToDll(arr, size);
 
-    Node* x=deletion(head,4);
+    Node* x=deletion(head,3);
     // Print the linked list
     Node* temp = x;
     while (temp != nullptr) {
